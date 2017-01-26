@@ -66,17 +66,14 @@ Object_3D_JSON.prototype.loadModel = function(whenReady_Fn) {
             'resources/object.json',
             // Function when resource is loaded
             function ( geometry, materials ) {
-                console.log("loading");
+                console.log("start loading json");
                 // this._material = new THREE.MultiMaterial( materials );
                 self._material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
                 self._mesh = new THREE.Mesh( geometry , materials );
                 self._geometry = geometry;
                 
-                // self._mesh = new THREE.BoxGeometry( 2, 1, 1 );
-                self._geometry = new THREE.BoxGeometry( 2, 3, 3 );
-                self._material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-                self._mesh = new THREE.Mesh( this._geometry, this._material );
-                console.log("loading will be over");
+
+                console.log("loading json is done");
                 whenReady_Fn();
                 // scene.add( this._mesh );
             },

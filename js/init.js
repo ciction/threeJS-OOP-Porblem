@@ -18,11 +18,11 @@ var World = (function () {
         this._renderer.setSize( this._width , this._height );                                              
         
 
-        this._worldName = "Tubrines";
+        this._worldName = "My 3D world";
         this._object_3DList = [];
 
         
-         return _privatePrintMessage.call(this, "message");
+         return _privatePrintMessage.call(this, "created");
     }
 
 
@@ -52,7 +52,7 @@ var World = (function () {
     World.prototype.addToScene = function(object_3DClass){
 
         this._scene.add( object_3DClass._mesh );
-        console.log( object_3DClass._mesh );
+        console.log("adding object:"  + object_3DClass.constructor.name );
         this._object_3DList.push(object_3DClass);
 
     }
